@@ -1,42 +1,71 @@
-.example {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Helvetica Neue', sans-serif;
-  line-height: 1.5;
-  background-color: #fff;
-  color: #424242;
-  max-width: 960px;
-  padding: 16px;
-}
-
 .search-form {
-  padding-bottom: 20px;
-  padding-top: 20px;
-  padding-left: 400px;
-  background-color: #6714ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: rgb(152, 236, 208);
+  height: 70px;
+  border-radius: 5px;
 }
 
-.input {
+.search-form input {
+  height: 45px;
+  width: 280px;
+  border-radius: 5px;
+  margin-right: 15px;
+  border: none;
+  text-align: center;
+}
+.search-form input::placeholder {
   text-align: left;
 }
-.input::placeholder {
-  text-align: left;
+.search-form button {
+  height: 40px;
+  width: 150px;
+  border-radius: 4px;
+
+  background-color: rgb(151, 7, 247);
+}
+
+.load-more {
+  height: 40px;
+  width: 130px;
+  border-radius: 4px;
+
+  background-color: rgb(151, 7, 247);
+
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
 .gallery {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.is-hidden {
-  display: none;
+.photo-card {
+  height: 320px;
+  margin-right: 15px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.button {
-  background-color: #6714ec;
-  color: black;
-  width: 200px;
-  margin-left: 500px;
-  border-radius: 4px;
-  cursor: pointer;
+.imageThumb {
+  display: flex;
+  height: 270px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.info-item {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
