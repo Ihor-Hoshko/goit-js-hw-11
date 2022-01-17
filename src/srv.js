@@ -1,6 +1,7 @@
 import axios from 'axios';
+import SimpleLightbox from 'simplelightbox';
 
-const API_KEY = '25272206 - 904bc923b3419c336cabf17c5';
+const API_KEY = '24484314-ee5138bfa536a1ec729b18d47';
 axios.defaults.baseURL = 'https://pixabay.com/api/';
 
 const fetchSearch = async (data, page) => {

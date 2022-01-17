@@ -8,20 +8,35 @@
   padding: 16px;
 }
 
-.example code {
-  font-family: monospace;
-  font-size: 16px;
-  font-weight: 700;
-  background-color: #009688;
-  color: #fff;
-  padding: 2px 6px;
-  border-radius: 2px;
+.search-form {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 400px;
+  background-color: #6714ec;
 }
 
-.example .background {
-  height: 240px;
-  // Путь к изображениям из SASS-файла всегда такой, как из папки css
-  background-image: url('../images/demo.jpg');
-  background-size: cover;
-  background-position: center;
+.input {
+  text-align: left;
+}
+.input::placeholder {
+  text-align: left;
+}
+
+.gallery {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.button {
+  background-color: #6714ec;
+  color: black;
+  width: 200px;
+  margin-left: 500px;
+  border-radius: 4px;
+  cursor: pointer;
 }

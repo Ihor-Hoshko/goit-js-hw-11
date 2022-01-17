@@ -1,8 +1,10 @@
+const DEBOUNCE_DELAY = 500;
+
 import './sass/main.scss';
 import Notiflix from 'notiflix';
-import axios from 'axios';
 
-const DEBOUNCE_DELAY = 500;
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 import { fetchSearch } from './srv.js';
 import { createMarkup } from './srv.js';
@@ -28,7 +30,11 @@ const getData = (keyWord, page) => {
       return;
     })
 
-    .catch(err => handleError(err));
+    .catch(err =>
+      Notiflix.Notify.failure(
+        `Sorry, there are no images matching your search query. Please try again`,
+      )(err),
+    );
 };
 
 const getImage = e => {
@@ -41,12 +47,6 @@ const getImage = e => {
   }
   page = 1;
   getData(keyWord, page);
-};
-
-const handleError = err => {
-  Notiflix.Notify.failure(
-    `Sorry, there are no images matching your search query. Please try again`,
-  );
 };
 
 const onLoadMore = () => {
