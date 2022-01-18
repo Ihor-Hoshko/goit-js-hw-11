@@ -17,7 +17,7 @@
   text-align: center;
 }
 .search-form input::placeholder {
-  text-align: left;
+  text-align: center;
 }
 .search-form button {
   height: 40px;
@@ -53,7 +53,7 @@
   overflow: hidden;
 }
 
-.imageThumb {
+.image-thumb {
   display: flex;
   height: 270px;
 }

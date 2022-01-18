@@ -28,7 +28,7 @@ function onSearch(e) {
     if (totalHits === 0) {
       return errorShow();
     }
-    appendArticlesMarkup(hits);
+    addArticlesMarkup(hits);
     showTotalImage(totalHits);
 
     refs.loadMore.style.display = 'flex';
@@ -37,20 +37,20 @@ function onSearch(e) {
 
 function onLoadMore() {
   newsApi.fetchImage().then(({ hits }) => {
-    appendArticlesMarkup(hits);
+    addArticlesMarkup(hits);
   });
 }
 
-function appendArticlesMarkup(articles) {
-  refs.gallery.insertAdjacentHTML('beforeend', addCardImage(articles));
+function addArticlesMarkup(articles) {
+  refs.gallery.insertAdjacentHTML('beforeend', addCard(articles));
   const lightbox = new SimpleLightbox('.gallery a');
 }
 
-function addCardImage(card) {
+function addCard(card) {
   return card.map(
     el => `
   <div class="photo-card">
-    <div class='imageThumb'>
+    <div class='image-thumb'>
       <a href="${el.largeImageURL}" class='link'>
         <img src="${el.webformatURL}" alt="${el.tags}" loading="lazy" width="400px" heigth="270px" class='img'/>
       </a>
