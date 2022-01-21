@@ -13,7 +13,7 @@ export default class NewsApiService {
     try {
       const response = await axios.get(url);
       const pictures = response.data;
-      console.log(pictures);
+
       this.pageNext();
       return pictures;
     } catch (error) {

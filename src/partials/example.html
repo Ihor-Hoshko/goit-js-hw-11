@@ -1,6 +1,13 @@
-<form class="search-form" id="search-form">
-  <input type="text" name="searchQuery" autocomplete="off" placeholder="Search images..." />
+<form class="search-form js-search-form" id="search-form">
+  <label for="searchQuery" class="sr-only"></label>
+  <input
+    type="text"
+    id="searchQuery"
+    name="query"
+    autocomplete="off"
+    placeholder="Search images..."
+  />
   <button type="submit">Search</button>
 </form>
-<div class="gallery"></div>
+<div class="gallery js-article-container"></div>
 <button type="button" class="load-more">Load more</button>

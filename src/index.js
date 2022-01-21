@@ -21,12 +21,16 @@ function onSearch(e) {
   refs.loadMore.style.display = 'none';
   newsApi.query = e.currentTarget.searchQuery.value;
   if (newsApi.query === '') {
-    return errorShow();
+    return Notiflix.Notify.failure(
+      'Sorry, there are no images matching your search query. Please try again.',
+    );
   }
   newsApi.resetPage();
   newsApi.fetchImage().then(({ hits, totalHits }) => {
     if (totalHits === 0) {
-      return errorShow();
+      return Notiflix.Notify.failure(
+        'Sorry, there are no images matching your search query. Please try again.',
+      );
     }
     addArticlesMarkup(hits);
     showTotalImage(totalHits);
@@ -36,7 +40,11 @@ function onSearch(e) {
 }
 
 function onLoadMore() {
-  newsApi.fetchImage().then(({ hits }) => {
+  newsApi.fetchImage().then(({ hits, totalHits }) => {
+    if (totalHits > hits) {
+      Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
+      refs.loadMore.style.display = 'none';
+    }
     addArticlesMarkup(hits);
   });
 }
